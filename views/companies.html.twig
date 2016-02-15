@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <h1>Select a Company</h1>
+    <form method="post" action="companies/lookup">
+        <select name="company">
+            {% for company in companies %}
+                <option value="{{ company.symbol }}">{{ company.name }} ({{ company.symbol }})</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Look up"/>
+    </form>
+{% endblock %}

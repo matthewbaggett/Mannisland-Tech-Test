@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <h1>{{ company.name }}</h1>
+    <h2>{{ company.symbol }}</h2>
+
+    <h3>Directors</h3>
+    {% for director in directors %}
+        <p>{{ director }}</p>
+    {% endfor %}
+
+    <h3>Quotes</h3>
+    <dl>
+    {% for quote in quotes %}
+        <dt>{{ quote.created|date("l, F Y H:i:s") }}</dt>
+        <dd>{{ quote.value }}</dd>
+    {% endfor %}
+    </dl>
+{% endblock %}

@@ -1,0 +1,30 @@
+{
+    "name": "matthewbaggett/mann-island-dev-exercize",
+    "description": "Developer exercize",
+    "license": "GPL V2",
+    "authors": [
+        {
+            "name": "Matthew Baggett",
+            "email": "matthew@baggett.me"
+        }
+    ],
+    "require": {
+        "slim/slim": "~3.0@stable",
+        "zeuxisoo/slim-whoops": "0.5.*",
+        "raveren/kint": "^1.0",
+        "slim/twig-view": "^1.0",
+        "zendframework/zend-soap": "^2.5",
+        "thru.io/active_record": ">=0.4",
+        "twbs/bootstrap": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "DevExercize\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DevExercize\\Test\\": "tests/"
+        }
+    }
+}
