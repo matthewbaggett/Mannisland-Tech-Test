@@ -17,14 +17,29 @@ $app = new \Slim\App(
 );
 
 // Lets connect to a database
-$databaseConfiguration = array(
-    'db_type' => 'Mysql',
-    'db_hostname' => 'localhost',
-    'db_port' => '3306',
-    'db_username' => 'mann_island_test',
-    'db_password' => 'mann_island_test',
-    'db_database' => 'mann_island_test',
-);
+switch(gethostname()){
+    case 'houston':
+        $databaseConfiguration = array(
+            'db_type' => 'Mysql',
+            'db_hostname' => 'sql.thru.io',
+            'db_port' => '3306',
+            'db_username' => 'mann_island_test',
+            'db_password' => '99314RG6O9rT74D',
+            'db_database' => 'mann_island_test',
+        );
+        break;
+
+    default:
+        $databaseConfiguration = array(
+            'db_type' => 'Mysql',
+            'db_hostname' => 'localhost',
+            'db_port' => '3306',
+            'db_username' => 'mann_island_test',
+            'db_password' => 'mann_island_test',
+            'db_database' => 'mann_island_test',
+        );
+}
+
 $database = new \Thru\ActiveRecord\DatabaseLayer($databaseConfiguration);
 
 // This would normally be stored elsewhere, but since time is of the essence..
